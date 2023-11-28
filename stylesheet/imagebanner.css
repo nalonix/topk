@@ -1,0 +1,13 @@
+.image_banner{
+    background-image: url("../assets/image/theman.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    width: 35%;
+    padding: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
