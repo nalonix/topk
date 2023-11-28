@@ -1,0 +1,63 @@
+<div class="table">
+    <div class="hideme tophideme">tobehidden</div>
+    <div class="grid-item a top-row">Foo Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nobis sint! Aspernatur provident asperiores dicta.</div>
+    <div class="grid-item b top-row">Bar Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio cum deleniti consectetur? Numquam, culpa beatae!</div>
+    <div class="grid-item c top-row">Baz Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam placeat tempora nam quidem? Suscipit, repellendus!</div>
+    <div class="hideme bottomhideme">tobehidden</div>
+    <div class="grid-item a bottom-row">1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. </div>
+    <div class="grid-item b bottom-row">2 Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+    <div class="grid-item c bottom-row">3 Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+  </div>
+
+  <style>
+    .table {
+  font-family: Tahoma, sans-serif;
+  border: solid green 2px;
+  min-width: 200px;
+  
+  
+  
+  display: grid;
+  grid-template-columns: repeat(3,minmax(200px,1fr));
+  grid-template-rows: 2fr 1fr;
+}
+
+.grid-item {
+  padding: 8px;
+  border: 1px solid grey;
+}
+
+.hideme{
+  display:none
+}
+
+@media (max-width: 600px){
+  .table{
+  grid-template-columns: repeat(2,minmax(200px,1fr));
+  }
+}
+@media (max-width: 450px){
+    .table{
+        grid-template-columns: repeat(1,minmax(200px,1fr));
+        grid-template-rows: 1fr 3fr 1fr 3fr;
+    }
+    .tophideme{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .top-row{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    
+    .bottomhideme{
+        grid-area: 3 / 1 / 4 / 2;
+}
+.bottom-row{
+    grid-area: 4 / 1 / 5 / 2;
+    }
+    .hideme{
+        display: flex;
+    }
+    
+    
+}
+  </style>
