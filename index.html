@@ -22,8 +22,7 @@
               </div>
             </div>
             <div class="content">
-              <div class="content-top">
-                <div class="content-top--quick_nav">
+              <div class="content-top-grid">
                   <div>
                     <h4 class="small_bold">Got a question?</h4>
                     <a href="">Get in touch</a>
@@ -32,29 +31,33 @@
                     <h4 class="small_bold">Stay in the loop</h4>
                     <a href="">Subscribe</a>
                   </div>
+                  <div class="mobile_and_tab anchor_container">
+                    <img id="anchor" src="./assets/image/anchor.gif" alt="">
+                  </div>
                   <div>
                     <h4 class="small_bold">I'm on socials</h4>
                     <a href="">Follow me on x.com</a>
                   </div>
-                </div>
               </div>
-              <div class="content-middle">
-                <div class="tile_container only_mobile">
-                  <div class="tile">
-                    <input type="radio" name="middletabtiles" id="projects" />
-                    <label for="projects">Projects</label>
-                  </div>
-                  <div class="tile">
-                    <input type="radio" name="middletabtiles" id="stack" />
-                    <label for="stack">Stack</label>
-                  </div>
-                  <div class="tile">
-                    <input type="radio" name="middletabtiles" id="clients" />
-                    <label for="clients">Clients</label>
+              <div class="grid">
+                <div class="only_mobile tophideme">
+                  <div class="tile_container">
+                    <div class="tile">
+                      <input type="radio" name="middletabtiles" id="projects" value="projectslist" checked/>
+                      <label for="projects">Projects</label>
+                    </div>
+                    <div class="tile">
+                      <input type="radio" name="middletabtiles" id="stack" value="stacklist"/>
+                      <label for="stack">Stack</label>
+                    </div>
+                    <div class="tile">
+                      <input type="radio" name="middletabtiles" id="clients" value="clientslist"/>
+                      <label for="clients">Clients</label>
+                    </div>
                   </div>
                 </div>
-                <div class="columns_container">
-                  <div id="projects">
+                <div class="grid-item top-row">
+                  <div id="projectslist" class="middlelist">
                     <h4 class="small_bold">Projects</h4>
                     <div class="list">
                       <table>
@@ -93,7 +96,9 @@
                       </table>
                     </div>
                   </div>
-                  <div id="stack">
+                </div>
+                <div class="grid-item top-row">
+                  <div id="stacklist" class="middlelist">
                     <h4 class="small_bold">Stack</h4>
                     <div class="list">
                       <table>
@@ -118,7 +123,7 @@
                           <td>Web design</td>
                         </tr>
                         <tr>
-                          <td>Screen Studio</td>
+                          <td>Invision</td>
                           <td>Web design</td>
                         </tr>
                         <tr>
@@ -140,7 +145,10 @@
                       </table>
                     </div>
                   </div>
-                  <div id="clients">
+            
+                </div>
+                <div class="grid-item top-row">
+                  <div id="clientslist" class="middlelist">
                     <h4 class="small_bold">Clients</h4>
                     <div class="list">
                       <table>
@@ -171,91 +179,147 @@
                       </table>
                     </div>
                   </div>
+            
                 </div>
-              </div>
-              <div class="content-bottom">
-                <div class="bottom-text_content">
-                  <div class="tile_container only_mobile">
-                    <div class="tile">
-                      <input type="radio" name="bottomtabtiles" id="features" />
+                <div class="only_mobile bottomhideme">
+                  <div class="tile_container">
+                    <div class="tile"> 
+                      <input type="radio" name="bottomtabtiles" id="features" value="featureslist" checked/>
                       <label for="features">Features</label>
                     </div>
                     <div class="tile">
-                      <input type="radio" name="bottomtabtiles" id="channels" />
+                      <input type="radio" name="bottomtabtiles" id="channels" value="channelslist"/>
                       <label for="channels">Channels</label>
                     </div>
                   </div>
-                  <div class="columns_container">
-                    <div id="features">
-                      <h4 class="small_bold">Features</h4>
-                      <div class="list">
-                        <table>
-                          <tr>
-                            <td>Config</td>
-                            <td>'22</td>
-                          </tr>
-                          <tr>
-                            <td>Hatch Conference</td>
-                            <td>'23</td>
-                          </tr>
-                          <tr>
-                            <td>Wall Street Journal</td>
-                            <td>'23</td>
-                          </tr>
-                          <tr>
-                            <td>New York Times</td>
-                            <td>'22</td>
-                          </tr>
-                          <tr>
-                            <td>Macworld</td>
-                            <td>'23</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                    <div id="clients">
-                      <h4 class="small_bold">Channels</h4>
-                      <div class="list">
-                        <table>
-                          <tr>
-                            <td>Twitter</td>
-                            <td>Visual design</td>
-                          </tr>
-                          <tr>
-                            <td>Linkedin</td>
-                            <td>Web design</td>
-                          </tr>
-                          <tr>
-                            <td>Medium</td>
-                            <td>Visual design</td>
-                          </tr>
-                          <tr>
-                            <td>Substack</td>
-                            <td>Visual design</td>
-                          </tr>
-                        </table>
-                      </div>
+                </div>
+                <div class="grid-item bottom-row">
+                  <div id="featureslist" class="bottomlist">
+                    <h4 class="small_bold">Features</h4>
+                    <div class="list">
+                      <table>
+                        <tr>
+                          <td>Config</td>
+                          <td>'22</td>
+                        </tr>
+                        <tr>
+                          <td>Hatch Conference</td>
+                          <td>'23</td>
+                        </tr>
+                        <tr>
+                          <td>Wall Street Journal</td>
+                          <td>'23</td>
+                        </tr>
+                        <tr>
+                          <td>New York Times</td>
+                          <td>'22</td>
+                        </tr>
+                        <tr>
+                          <td>Macworld</td>
+                          <td>'23</td>
+                        </tr>
+                      </table>
                     </div>
                   </div>
                 </div>
-                <div class="bottom-btn_container">
-                  <a href="#" class="button_contact">
-                    Contact
-          
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      ><path
-                        d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-                      ></path></svg
-                    >
-                  </a>
+                <div class="grid-item bottom-row">
+                  <div id="channelslist" class="bottomlist">
+                    <h4 class="small_bold">Channels</h4>
+                    <div class="list">
+                      <table>
+                        <tr>
+                          <td>Twitter</td>
+                          <td>Visual design</td>
+                        </tr>
+                        <tr>
+                          <td>Linkedin</td>
+                          <td>Web design</td>
+                        </tr>
+                        <tr>
+                          <td>Medium</td>
+                          <td>Visual design</td>
+                        </tr>
+                        <tr>
+                          <td>Substack</td>
+                          <td>Visual design</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <div class="bottom-btn_container">
+                    <a href="#" class="button_contact">
+                      Contact
+            
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        ><path
+                          d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
+                        ></path></svg
+                      >
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
     </main>
 </body>
+<script>
+  // Get all radio buttons
+  const middleTabs = document.querySelectorAll('input[name="middletabtiles"]');
+  const middleLists= document.querySelectorAll('.middlelist'); // Select all divs with IDs starting with 'div'
+  
+  // Add change event listeners to all radio buttons
+  middleTabs.forEach(radio => {
+    radio.addEventListener('change', function() {
+      const divId = this.value; // Get the value of the clicked radio button
+      const correspondingDiv = document.getElementById(divId); // Get the corresponding div by ID
+  
+      // Set the opacity of the corresponding div
+      if (correspondingDiv) {
+        middleLists.forEach(div => {
+          if (div === correspondingDiv) {
+            div.style.opacity = '1'; // Set the opacity of the clicked div to 0
+          } else {
+            div.style.opacity = '0'; // Set the opacity of other divs to 1
+          }
+        });
+      }
+    });
+  });
+
+
+
+
+
+  // Get all radio buttons
+const bottomTabs = document.querySelectorAll('input[name="bottomtabtiles"]');
+const bottomLists= document.querySelectorAll('.bottomlist'); // Select all divs with IDs starting with 'div'
+
+// Add change event listeners to all radio buttons
+bottomTabs.forEach(radio => {
+  radio.addEventListener('change', function() {
+    const divId = this.value; // Get the value of the clicked radio button
+    const correspondingDiv = document.getElementById(divId); // Get the corresponding div by ID
+
+    // Set the opacity of the corresponding div
+    if (correspondingDiv) {
+      bottomLists.forEach(div => {
+        if (div === correspondingDiv) {
+          div.style.opacity = '1'; // Set the opacity of the clicked div to 0
+        } else {
+          div.style.opacity = '0'; // Set the opacity of other divs to 1
+        }
+      });
+    }
+  });
+});
+
+
+</script>
 </html>

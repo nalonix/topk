@@ -1,0 +1,151 @@
+.content{
+    width: 100%;
+}
+
+.content-top-grid{
+  width: 100%;
+  margin: 0 0 3rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(3,minmax(200px,1fr));
+}
+
+.content-top-grid > div{
+  padding: 1rem;
+}
+.anchor_container{
+  justify-content: center;
+}
+#anchor{
+  width: 60px;
+}
+
+.grid {
+    min-width: 200px;
+    
+    display: grid;
+    grid-template-columns: repeat(3,minmax(200px,1fr));
+    grid-template-rows: 2fr 1fr;
+  }
+  
+  .grid-item {
+    padding: 1rem;
+    /* border: 1px solid grey; */
+  }
+  
+  .only_mobile{
+    display:none;
+  }
+  .mobile_and_tab{
+    display: none;
+  }
+
+  .tile_container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .tile{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  input{
+    opacity: 0;
+  }
+ 
+  input[type="radio"]:checked + label {
+    border: 2px solid blue;
+    /* styling for selected radio button */
+  }
+  label{
+    border: solid red 2px;
+    padding: 0.3rem;
+    /* default style for radio buttons */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 200px;
+  }
+  table,
+  th,
+  td {
+    /* border: solid black 2px; */
+    line-height: 1.3rem;
+  }
+
+  table td:nth-child(odd) {
+    text-align: left;
+  }
+
+  table td:nth-child(even) {
+    text-align: right;
+  }
+
+
+  .tophideme, .bottomhideme{
+    border: solid 5px yellow;
+    padding: 0 0 0 1rem;
+  }
+  .tile > input{
+    /* opacity: 0; */
+  }
+  input[type="radio"]:checked{
+    border: solid 2px red;
+}
+
+  
+  @media (max-width: 950px){
+    .grid{
+      grid-template-columns: repeat(2,minmax(200px,1fr));
+    }
+    .content-top-grid{
+      grid-template-columns: repeat(2,minmax(100px,1fr));
+    }
+    .mobile_and_tab{
+      display: flex;
+    }
+  }
+
+  @media (min-width: 430px) {
+    .middlelist{
+      border: solid green 3px;
+      opacity: 1;
+    }
+    .bottomlist{
+      border: solid green 2px;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 430px){
+      .content{
+        translate: 0 -40px;
+      }
+      .grid{
+          grid-template-columns: repeat(1,minmax(200px,1fr));
+          grid-template-rows: 0.5fr 3.5fr 0.5fr 2fr 1fr;
+      }
+      .tophideme{
+          grid-area: 1 / 1 / 2 / 2;
+      }
+      .top-row{
+          grid-area: 2 / 1 / 3 / 2;
+      }
+      
+      .bottomhideme{
+          grid-area: 3 / 1 / 4 / 2;
+  }
+  .bottom-row{
+      grid-area: 4 / 1 / 5 / 2;
+      }
+
+      table{
+        max-width: unset;
+      }
+      
+      .only_mobile{
+          display: flex;
+      }
+  }
