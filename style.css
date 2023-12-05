@@ -1,22 +1,37 @@
 @import url("./stylesheet/imagebanner.css");
 @import url("./stylesheet/content.css");
 
+:root{
+
+    /* vars here */
+    --blue-gray: rgb(37, 42, 58);
+    --font-blue-gray: rgb(129, 133, 150);
+    --dark-blue: #0D0F11;
+    --font-white: rgba(255, 255, 255, 0.818);
+    --sharp-orange: #FF3D00;
+    --opaque-orange: rgba(255, 60, 0, 0.307);
+
+    
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
-    transition: 500ms;
+    color: var(--font-white);
+    font-family: 'Poppins', sans-serif;
 }
 
-:root{
-    /* vars here */
+
+body{
+    background-color: var(--blue-gray);
 }
 
 main{
     display: flex;
     justify-content: center;
     padding: 2rem 0;
+    
 }
 
 .container{
@@ -27,10 +42,14 @@ main{
     padding: 0.5rem;
     
     border-radius: 15px;
-    background-color: rgba(0, 0, 255, 0.213);
+    background-color: var(--dark-blue);
 }
 
-@media (max-width: 750px){
+.noneselectedtab{
+    opacity: 1;
+}
+
+@media (max-width: 780px){
     .container{
         flex-direction: column;
         width: 90%;
@@ -44,5 +63,14 @@ main{
     .container{
         width: 100%;
         border-radius: 0;
+    }
+    .content{
+        padding: 0;
+    }
+}
+
+@media (max-width: 430px){
+    .noneselectedtab{
+        opacity: 0;
     }
 }

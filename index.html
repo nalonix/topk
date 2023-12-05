@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>TOPK</title>
 </head>
@@ -25,18 +28,18 @@
               <div class="content-top-grid">
                   <div>
                     <h4 class="small_bold">Got a question?</h4>
-                    <a href="">Get in touch</a>
+                    <a href="https://t.me/doniverse" target="_blank">Get in touch</a>
                   </div>
                   <div>
                     <h4 class="small_bold">Stay in the loop</h4>
-                    <a href="">Subscribe</a>
+                    <a href="https://t.me/doniverse" target="_blank">Subscribe</a>
                   </div>
                   <div class="mobile_and_tab anchor_container">
                     <img id="anchor" src="./assets/image/anchor.gif" alt="">
                   </div>
                   <div>
                     <h4 class="small_bold">I'm on socials</h4>
-                    <a href="">Follow me on x.com</a>
+                    <a href="https://t.me/doniverse" target="_blank">Follow me on x.com</a>
                   </div>
               </div>
               <div class="grid">
@@ -98,7 +101,7 @@
                   </div>
                 </div>
                 <div class="grid-item top-row">
-                  <div id="stacklist" class="middlelist">
+                  <div id="stacklist" class="middlelist noneselectedtab">
                     <h4 class="small_bold">Stack</h4>
                     <div class="list">
                       <table>
@@ -148,7 +151,7 @@
             
                 </div>
                 <div class="grid-item top-row">
-                  <div id="clientslist" class="middlelist">
+                  <div id="clientslist" class="middlelist noneselectedtab">
                     <h4 class="small_bold">Clients</h4>
                     <div class="list">
                       <table>
@@ -223,7 +226,7 @@
                   </div>
                 </div>
                 <div class="grid-item bottom-row">
-                  <div id="channelslist" class="bottomlist">
+                  <div id="channelslist" class="bottomlist noneselectedtab">
                     <h4 class="small_bold">Channels</h4>
                     <div class="list">
                       <table>
@@ -249,18 +252,20 @@
                 </div>
                 <div class="grid-item">
                   <div class="bottom-btn_container">
-                    <a href="#" class="button_contact">
+                    <a href="https://t.me/doniverse" target="_blank" class="button_contact">
                       Contact
-            
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        ><path
-                          d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-                        ></path></svg
-                      >
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  >
+  <path
+    d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
+    fill="white" 
+  ></path>
+</svg>
+
                     </a>
                   </div>
                 </div>
@@ -270,9 +275,9 @@
     </main>
 </body>
 <script>
-  // Get all radio buttons
+  // Get all radio buttons and middlelist elements
   const middleTabs = document.querySelectorAll('input[name="middletabtiles"]');
-  const middleLists= document.querySelectorAll('.middlelist'); // Select all divs with IDs starting with 'div'
+  const middleLists = document.querySelectorAll('.middlelist');
   
   // Add change event listeners to all radio buttons
   middleTabs.forEach(radio => {
@@ -280,45 +285,42 @@
       const divId = this.value; // Get the value of the clicked radio button
       const correspondingDiv = document.getElementById(divId); // Get the corresponding div by ID
   
-      // Set the opacity of the corresponding div
-      if (correspondingDiv) {
-        middleLists.forEach(div => {
-          if (div === correspondingDiv) {
-            div.style.opacity = '1'; // Set the opacity of the clicked div to 0
-          } else {
-            div.style.opacity = '0'; // Set the opacity of other divs to 1
-          }
-        });
-      }
-    });
-  });
-
-
-
-
-
-  // Get all radio buttons
-const bottomTabs = document.querySelectorAll('input[name="bottomtabtiles"]');
-const bottomLists= document.querySelectorAll('.bottomlist'); // Select all divs with IDs starting with 'div'
-
-// Add change event listeners to all radio buttons
-bottomTabs.forEach(radio => {
-  radio.addEventListener('change', function() {
-    const divId = this.value; // Get the value of the clicked radio button
-    const correspondingDiv = document.getElementById(divId); // Get the corresponding div by ID
-
-    // Set the opacity of the corresponding div
-    if (correspondingDiv) {
-      bottomLists.forEach(div => {
-        if (div === correspondingDiv) {
-          div.style.opacity = '1'; // Set the opacity of the clicked div to 0
+      // Toggle the class 'noneselectedtab' based on the radio button's value
+      middleLists.forEach(div => {
+        if (div.id === divId) {
+          div.classList.remove('noneselectedtab'); // Remove 'noneselectedtab' class
         } else {
-          div.style.opacity = '0'; // Set the opacity of other divs to 1
+          if (!div.classList.contains('noneselectedtab')) {
+            div.classList.add('noneselectedtab'); // Add 'noneselectedtab' class
+          }
         }
       });
-    }
+    });
   });
-});
+  
+
+// Get all radio buttons and middlelist elements
+  const bottomTabs = document.querySelectorAll('input[name="bottomtabtiles"]');
+  const bottomLists = document.querySelectorAll('.bottomlist');
+  
+  // Add change event listeners to all radio buttons
+  bottomTabs.forEach(radio => {
+    radio.addEventListener('change', function() {
+      const divId = this.value; // Get the value of the clicked radio button
+      const correspondingDiv = document.getElementById(divId); // Get the corresponding div by ID
+  
+      // Toggle the class 'noneselectedtab' based on the radio button's value
+      bottomLists.forEach(div => {
+        if (div.id === divId) {
+          div.classList.remove('noneselectedtab'); // Remove 'noneselectedtab' class
+        } else {
+          if (!div.classList.contains('noneselectedtab')) {
+            div.classList.add('noneselectedtab'); // Add 'noneselectedtab' class
+          }
+        }
+      });
+    });
+  });
 
 
 </script>
